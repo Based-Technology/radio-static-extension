@@ -3,3 +3,9 @@
 
 # macOS
 .DS_Store
+
+# build artifacts
+dist/
+
+# local-only files (launch assets, internal notes)
+/private/

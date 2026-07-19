@@ -1,9 +1,9 @@
 # Radio Static (browser extension)
 
 Play YouTube through an old radio: band-limited speaker, cabinet resonances,
-static, crackle and AGC squash — live, in the browser. Companion to the
-[radio-static](https://github.com/Based-Technology/radio-static) Python tool,
-which is the reference implementation this chain is calibrated against.
+static, crackle and AGC squash — live, in the browser. The effect chain is a
+Web Audio port of a Python reference implementation, calibrated against
+spectral measurements of a real vintage radio.
 
 ## Install (development)
 

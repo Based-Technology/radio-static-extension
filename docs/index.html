@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Radio Static — play YouTube through a 1950s radio</title>
+  <meta name="description" content="A browser extension that adds an old-radio switch to every YouTube video. Band-limited speaker, static, crackle — tuned against a real vintage radio. No servers, no data collected.">
+  <style>
+    :root {
+      --paper: #f4f1ea;
+      --panel: #e7e0d1;
+      --caramel: #d4a373;
+      --rust: #b5652a;
+      --dark: #5c3d1e;
+      --ink: #3a3226;
+      --muted: #7a6f5c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    header { text-align: center; padding: 64px 0 40px; }
+    header img { width: 96px; height: 96px; }
+    h1 { font-size: 44px; margin: 16px 0 8px; letter-spacing: 1px; }
+    .tagline { font-size: 20px; color: var(--muted); font-style: italic; margin: 0 0 28px; }
+    .cta {
+      display: inline-block;
+      background: var(--rust);
+      color: var(--paper);
+      font-size: 18px;
+      padding: 14px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      border: 2px solid var(--dark);
+    }
+    .cta:hover { background: var(--dark); }
+    .cta-sub { display: block; margin-top: 10px; font-size: 13px; color: var(--muted); }
+    .demo {
+      background: var(--ink);
+      border: 4px solid var(--dark);
+      border-radius: 14px;
+      aspect-ratio: 16 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--paper);
+      margin: 24px 0 56px;
+      overflow: hidden;
+    }
+    .demo video { width: 100%; height: 100%; }
+    section { margin: 0 0 56px; }
+    h2 {
+      font-size: 26px;
+      border-bottom: 2px solid var(--caramel);
+      padding-bottom: 6px;
+    }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 0; list-style: none; }
+    .steps li {
+      background: var(--panel);
+      border: 2px solid var(--caramel);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .steps .big { font-size: 30px; display: block; margin-bottom: 6px; }
+    .features { padding-left: 0; list-style: none; }
+    .features li { margin: 10px 0; padding-left: 28px; position: relative; }
+    .features li::before { content: "📻"; position: absolute; left: 0; font-size: 14px; top: 4px; }
+    blockquote {
+      margin: 0;
+      padding: 16px 20px;
+      background: var(--panel);
+      border-left: 4px solid var(--rust);
+      border-radius: 0 10px 10px 0;
+      font-style: italic;
+    }
+    footer {
+      text-align: center;
+      padding: 32px 0 48px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    footer a { color: var(--rust); }
+    @media (max-width: 560px) {
+      h1 { font-size: 32px; }
+      .steps { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <img src="icon.svg" alt="Radio Static icon: a small retro radio">
+      <h1>Radio Static</h1>
+      <p class="tagline">Play YouTube through a 1950s radio.</p>
+      <!-- PLACEHOLDER: replace with the Chrome Web Store listing URL -->
+      <a class="cta" href="STORE_URL">Add to Chrome — free</a>
+      <span class="cta-sub">no account · no data collected · open source</span>
+    </header>
+
+    <div class="demo">
+      <!-- PLACEHOLDER: drop demo.mp4 into docs/ and swap this block for:
+           <video src="demo.mp4" controls muted playsinline poster="poster.jpg"></video> -->
+      <p>▶ demo video coming here</p>
+    </div>
+
+    <section>
+      <h2>What it does</h2>
+      <p>
+        One switch in the YouTube player, and whatever you're listening to
+        plays as if it's coming from an old AM radio across the room:
+        narrow tinny speaker, warm cabinet resonance, gentle static and
+        crackle underneath, and that squashed "always equally loud" sound
+        old receivers had. Flip it mid-chorus. That's the whole product.
+      </p>
+    </section>
+
+    <section>
+      <h2>How to use it</h2>
+      <ol class="steps">
+        <li><span class="big">1️⃣</span>Install the extension</li>
+        <li><span class="big">2️⃣</span>Open any YouTube video</li>
+        <li><span class="big">3️⃣</span>Flip the 📻 switch in the player (or press Alt+R)</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Tuned against a real radio</h2>
+      <blockquote>
+        We wanted it to sound like the office radio in a beloved Balkan
+        sitcom. So we spectrally analyzed the show's audio at the exact
+        moments the radio plays, found the speaker's cabinet resonance
+        (465&nbsp;Hz) and its cone-breakup peaks (1250 and 1800&nbsp;Hz),
+        and built those measurements into the effect chain.
+      </blockquote>
+      <p>
+        Five radios ship built-in — <em>the office radio</em>, <em>pocket
+        transistor</em>, <em>big console</em>, <em>distant station</em>,
+        <em>blown speaker</em> — plus sliders to tune your own.
+      </p>
+    </section>
+
+    <section>
+      <h2>Private by design</h2>
+      <ul class="features">
+        <li>All audio processing happens inside your browser — nothing is downloaded, uploaded, or recorded</li>
+        <li>No servers, no accounts, no analytics, no tracking of any kind</li>
+        <li>Only permission used: storing your slider settings in your own browser</li>
+        <li>Open source — read every line</li>
+      </ul>
+    </section>
+
+    <footer>
+      <!-- PLACEHOLDER: update repo URLs if they differ -->
+      <a href="https://github.com/Based-Technology/radio-static-extension">source code</a>
+      · <a href="privacy.html">privacy policy</a>
+      · made with ♥ and a spectrum analyzer
+    </footer>
+  </div>
+</body>
+</html>

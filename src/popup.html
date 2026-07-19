@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        width: 260px;
+        font-family: system-ui, sans-serif;
+        margin: 0;
+        padding: 14px;
+        background: #f4f1ea;
+        color: #3a3226;
+      }
+      #toggle {
+        display: block;
+        width: 100%;
+        font-size: 28px;
+        padding: 8px;
+        border-radius: 10px;
+        border: 2px solid #8a7a5c;
+        background: #e7e0d1;
+        cursor: pointer;
+      }
+      #toggle.on {
+        background: #d4a373;
+        border-color: #6b4f2a;
+      }
+      #status {
+        text-align: center;
+        font-size: 11px;
+        color: #7a6f5c;
+        margin: 6px 0 10px;
+      }
+      .row {
+        display: grid;
+        grid-template-columns: 62px 1fr 44px;
+        align-items: center;
+        gap: 6px;
+        margin: 7px 0;
+        font-size: 12px;
+      }
+      .row output {
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+      }
+      input[type="range"] {
+        width: 100%;
+        accent-color: #b5652a;
+      }
+      select {
+        grid-column: 2 / 4;
+        font: inherit;
+        padding: 3px 4px;
+        border: 1px solid #8a7a5c;
+        border-radius: 6px;
+        background: #e7e0d1;
+        color: inherit;
+      }
+      #reset {
+        display: block;
+        margin: 12px auto 0;
+        font-size: 11px;
+        background: none;
+        border: 1px solid #8a7a5c;
+        border-radius: 6px;
+        padding: 3px 10px;
+        color: #7a6f5c;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="toggle">📻</button>
+    <div id="status">…</div>
+
+    <div class="row preset-row">
+      <label for="preset">radio</label>
+      <select id="preset"></select>
+      <span></span>
+    </div>
+
+    <div class="row">
+      <label for="low">low cut</label>
+      <input id="low" type="range" min="60" max="1000" step="10" />
+      <output for="low"></output>
+    </div>
+    <div class="row">
+      <label for="high">high cut</label>
+      <input id="high" type="range" min="1500" max="8000" step="100" />
+      <output for="high"></output>
+    </div>
+    <div class="row">
+      <label for="speaker">speaker</label>
+      <input id="speaker" type="range" min="0" max="2" step="0.1" />
+      <output for="speaker"></output>
+    </div>
+    <div class="row">
+      <label for="drive">drive</label>
+      <input id="drive" type="range" min="0" max="30" step="1" />
+      <output for="drive"></output>
+    </div>
+    <div class="row">
+      <label for="hiss">static</label>
+      <input id="hiss" type="range" min="-60" max="-20" step="1" />
+      <output for="hiss"></output>
+    </div>
+    <div class="row">
+      <label for="crackle">crackle</label>
+      <input id="crackle" type="range" min="-60" max="-15" step="1" />
+      <output for="crackle"></output>
+    </div>
+    <div class="row">
+      <label for="room">room</label>
+      <input id="room" type="range" min="0" max="0.5" step="0.05" />
+      <output for="room"></output>
+    </div>
+
+    <button id="reset">reset to default radio</button>
+    <script src="popup.js"></script>
+  </body>
+</html>

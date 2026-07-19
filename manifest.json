@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "Radio Static",
+  "version": "0.4.0",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "description": "Play YouTube through an old radio: bandlimited speaker, static, crackle and AGC squash.",
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.youtube.com/*",
+        "*://m.youtube.com/*",
+        "*://music.youtube.com/*"
+      ],
+      "js": ["src/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["src/noise-worklet.js"],
+      "matches": ["*://*.youtube.com/*"]
+    }
+  ],
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "src/popup.html",
+    "default_title": "Radio Static (Alt+R to toggle)",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "commands": {
+    "toggle-radio": {
+      "suggested_key": {
+        "default": "Alt+R"
+      },
+      "description": "Toggle the old-radio effect"
+    }
+  }
+}

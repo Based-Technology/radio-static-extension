@@ -61,9 +61,3 @@ themselves are the stored state. Original variants with per-peak resonance
 differences (dual-768, honk-1800) can't be expressed in the flat param model
 (the "speaker" slider scales all three peaks together); approximating them
 poorly was worse than leaving them out.
-
-## Publishing
-
-Local dev: load unpacked, free. Sharing: Chrome Web Store $5 one-time developer
-fee, "unlisted" visibility for friends-scale. Firefox (AMO) and Edge stores are
-free if ported. No icons yet — add before any store submission.

@@ -5,6 +5,10 @@ static, crackle and AGC squash — live, in the browser. The effect chain is a
 Web Audio port of a Python reference implementation, calibrated against
 spectral measurements of a real vintage radio.
 
+## Install
+
+**[Add to Chrome from the Web Store](https://chromewebstore.google.com/detail/keaakjjjgohmnnoidpokbinclepkjgii)** (free).
+
 ## Install (development)
 
 1. Open `chrome://extensions`

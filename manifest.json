@@ -10,7 +10,17 @@
   },
   "description": "Play YouTube through an old radio: bandlimited speaker, static, crackle and AGC squash.",
   "background": {
-    "service_worker": "src/background.js"
+    "service_worker": "src/background.js",
+    "scripts": ["src/background.js"]
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "radio-static@based-technology.hr",
+      "strict_min_version": "128.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
   },
   "content_scripts": [
     {

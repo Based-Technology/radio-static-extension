@@ -1,0 +1,31 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Check tag matches manifest version
+        run: |
+          MANIFEST_VERSION=$(node -p "require('./manifest.json').version")
+          TAG_VERSION="${GITHUB_REF_NAME#v}"
+          if [ "$MANIFEST_VERSION" != "$TAG_VERSION" ]; then
+            echo "tag $TAG_VERSION does not match manifest version $MANIFEST_VERSION"
+            exit 1
+          fi
+      - name: Build store zip
+        run: |
+          mkdir -p dist
+          zip -r "dist/radio-static-${GITHUB_REF_NAME#v}.zip" manifest.json src icons -x "icons/icon.svg"
+          unzip -l "dist/radio-static-${GITHUB_REF_NAME#v}.zip"
+      - name: Create GitHub release with the zip
+        run: gh release create "$GITHUB_REF_NAME" "dist/radio-static-${GITHUB_REF_NAME#v}.zip" --title "$GITHUB_REF_NAME" --generate-notes
+        env:
+          GH_TOKEN: ${{ github.token }}

@@ -43,3 +43,8 @@ video ─┬─ dry gain (bypass) ───────────────�
 
 Audio never leaves the browser: no downloads, no backend, works while you
 stream normally. The noise bed mutes when the video is paused.
+
+## Support
+
+Free, no ads, no tracking. If you'd like to say thanks:
+[PayPal](https://paypal.me/175dinara) · [Revolut](https://revolut.me/sinia5qsr)
